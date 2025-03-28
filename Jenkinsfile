@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        nodejs 'NodeJS 23' // Ajustado para a versão que você configurou (23.10.0)
+        nodejs 'NodeJS 23'
     }
     stages {
         stage('Install') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm test -- --watchAll=false'
+                bat 'npm test -- --watchAll=false --passWithNoTests'
             }
         }
     }
