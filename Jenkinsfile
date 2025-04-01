@@ -16,6 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                bat 'dir src' // Adiciona isso para listar arquivos em src/
                 bat 'npm test -- --watchAll=false'
             }
         }
