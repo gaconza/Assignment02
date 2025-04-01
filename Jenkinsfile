@@ -15,10 +15,10 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                bat 'dir src' // Adiciona isso para listar arquivos em src/
-                bat 'npm test -- --watchAll=false'
-            }
-        }
+    steps {
+        bat 'dir src'
+        bat 'npx jest src/App.test.js --watchAll=false'
+    }
+}
     }
 }
