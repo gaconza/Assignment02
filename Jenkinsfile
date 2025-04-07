@@ -10,7 +10,14 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello World'
+                sh '''
+                    ls -la
+                    node --version
+                    nmp --version
+                    npm install
+                    npm run build
+                    ls -la
+                '''
             }
         }
     }
